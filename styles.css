@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size:32px;
+}
+body{
+    background:linear-gradient(to right, #7e7e6a, #8d8d41, #969628, #484804)
+}
+.calculator {
+    background: #9d2268;
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+.calculator input {
+    font-family: "Dubai Medium", serif;
+    text-align: left;
+    width: 93%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.calculator button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #FF0000;
+    background-color: #5f94ee;
+    border-radius: 10px;
+}
