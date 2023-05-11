@@ -1,133 +1,52 @@
-
-let resultInput = document.getElementById("result");
-let operatorUsed = false;
-function rad()
-{
-    let radians = parseFloat(resultInput.value);
-    resultInput.value = radians * Math.PI / 180;
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size:32px;
 }
-function deg()
-{
-    let degrees = parseFloat(resultInput.value);
-    resultInput.value = degrees * (180 / Math.PI);
+body{
+    background:linear-gradient(to right, #7e7e6a, #8d8d41, #969628, #484804)
 }
-function percent()
-{
-    resultInput.value = parseFloat(resultInput.value)/100;
+.calculator {
+    background: #794763;
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #5f94ee;
+    border-radius: 10px;
 }
-function answer()
-{
-    resultInput.value = "Answer = " + resultInput.value;
+.calculator .buttons .number {
+    font-weight: bold;
+    background: #969628;
+    padding: 10px 10px;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    border: 1px solid wheat;
 }
-function expo()
-{
-    resultInput.value+='E';
+.calculator .buttons .number:hover {
+    box-shadow: 0 8px 16px rgba(203, 3, 3, 0.2);
 }
-function factorial()
-{
-    try {
-        let number = parseInt(resultInput.value);
-        let longNumber = 1;
-        for (let i = 1; i <= number; i++)
-        {
-            longNumber*=i;
-        }
-        resultInput.value = longNumber;
-    }
-    catch (error)
-    {
-        resultInput.value = "Math Error"
-    }
-}
-function operation(operator) {
-    operatorUsed = true;
-    resultInput.value += operator;
-}
-function pi()
-{
-    if(!operatorUsed)
-    {
-        resultInput.value+="*";
-    }
-    resultInput.value+=Math.PI;
-}
-function euler()
-{
-    if(!operatorUsed)
-    {
-        resultInput.value+="*";
-    }
-    resultInput.value+=Math.E;
-}
-function Inverse()
-{
-    resultInput.value = 1/parseFloat(resultInput.value);
-}
-function Log(log)
-{
-    if(log==='ln')
-    {
-        if(resultInput.value.trim()==='')
-        {
-            resultInput.value = "Please enter a number";
-        }
-        else {
-            let number = parseFloat(resultInput.value);
-            resultInput.value = Math.log(number);
-        }
-    }
-    else
-    {
-        if(resultInput.value.trim()==='')
-        {
-            resultInput.value = "Please enter a number";
-        }
-        else {
-            let number = parseFloat(resultInput.value);
-            resultInput.value = Math.log10(number);
-        }
-    }
-}
-function power(pow)
-{
-    if(pow==='sqrt')
-    {
-        let number = parseFloat(resultInput.value);
-        resultInput.value = Math.sqrt(number);
-    }
-    else
-    {
-        resultInput.value+='**';
-    }
-}
-function number(value) {
-    operatorUsed = false;
-    resultInput.value += value;
+.calculator input {
+    font-family: "Dubai Medium", serif;
+    text-align: left;
+    width: 97%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 6px;
 }
 
-function Trig(operator)
-{
-    if (operator === 'sin'){
-        let angle = parseFloat(resultInput.value);
-        resultInput.value = Math.sin(angle);
-    }
-    else if(operator === 'cos'){
-        let angle = parseFloat(resultInput.value);
-        resultInput.value = Math.cos(angle);
-    }
-    else if(operator==='tan'){
-        let angle = parseFloat(resultInput.value);
-        resultInput.value = Math.tan(angle);
-    }
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
 }
-function cls() {
-    operatorUsed = false;
-    resultInput.value = "";
-}
-function equal() {
-    try {
-        resultInput.value = eval(resultInput.value);
-    } catch (error) {
-        resultInput.value = "Error";
-    }
+
+.calculator button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #FF0000;
+    background-color: #5f94ee;
+    border-radius: 10px;
 }
