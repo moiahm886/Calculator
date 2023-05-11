@@ -45,19 +45,29 @@ function operation(operator) {
 }
 function pi()
 {
-    if(!operatorUsed)
+    if(resultInput.value.trim()==='')
     {
-        resultInput.value+="*";
+        resultInput.value+=Math.PI;
     }
-    resultInput.value+=Math.PI;
+    else {
+        if (!operatorUsed) {
+            resultInput.value += "*";
+        }
+        resultInput.value += Math.PI;
+    }
 }
 function euler()
 {
-    if(!operatorUsed)
+    if(resultInput.value.trim()==='')
     {
-        resultInput.value+="*";
+        resultInput.value+=Math.PI;
     }
-    resultInput.value+=Math.E;
+    else {
+        if (!operatorUsed) {
+            resultInput.value += "*";
+        }
+        resultInput.value += Math.E;
+    }
 }
 function Inverse()
 {
